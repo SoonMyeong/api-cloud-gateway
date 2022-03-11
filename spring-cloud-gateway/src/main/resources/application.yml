@@ -8,7 +8,16 @@ spring:
           uri: lb://GREETING-API
           predicates:
             - Path=/api/greeting
-
+          filters:
+            - JwtAuthenticationFilter
+        - id : greeting-security
+          uri: lb://GREETING-SECURITY
+          predicates:
+            - Path=/security/**
+  security:
+    jwt:
+      key: SecretKey-jwt-key-github.com-SoonMyeong
+      issuer: test
 
 eureka:
   client:
