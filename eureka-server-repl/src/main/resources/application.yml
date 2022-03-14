@@ -1,9 +1,11 @@
 server:
-  port: 8761
+  port: 8762
+
+
 
 eureka:
   instance:
-    hostname: eureka1
+    hostname: eureka2
   #  server:
 #    response-cache-update-interval-ms: 1000 # 1?
 #    enable-self-preservation: false
@@ -11,8 +13,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://eureka2:8762/eureka/,http://eureka1:8761/eureka/
-
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
 spring:
   application:
     name: eureka-sever
